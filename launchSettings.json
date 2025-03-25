@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "serviceActions": {
+        "todobackend": "StartDebugging"
+      }
+    }
+  }
+}
