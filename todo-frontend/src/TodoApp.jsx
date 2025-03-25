@@ -20,6 +20,7 @@ import {
   ButtonGroup,
   Well,
   IllustratedMessage,
+  Checkbox,
 } from "@adobe/react-spectrum";
 import Add from "@spectrum-icons/workflow/Add";
 import Alert from "@spectrum-icons/workflow/Alert";
@@ -207,6 +208,7 @@ const TodoApp = () => {
               ? todo.dueDate.toISOString()
               : todo.dueDate,
           priority: todo.priority.toUpperCase(),
+          isCompleted: todo.isCompleted,
         },
       };
 
@@ -974,6 +976,14 @@ const TodoApp = () => {
                   />
                 </View>
               </Flex>
+              <Checkbox
+                isSelected={currentTodo.isCompleted}
+                onChange={(isSelected) =>
+                  setCurrentTodo({ ...currentTodo, isCompleted: isSelected })
+                }
+              >
+                Mark as Completed
+              </Checkbox>
 
               <ButtonGroup
                 UNSAFE_style={{
