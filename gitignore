@@ -1,0 +1,44 @@
+# === Logs ===
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# === Frontend Build and Dependencies ===
+node_modules/
+dist/
+dist-ssr/
+.vite/
+*.local
+
+# === Docker ===
+.env
+docker-compose.override.yml
+sqlserver_data/
+
+# === Editor Directories and Files ===
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.sw?
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# === .NET Core Backend ===
+**/bin/
+**/obj/
+*.user
+*.userosscache
+*.sln.docstates
+appsettings.*.json
+secrets.json
+
+# === Misc ===
+*.pid
+*.seed
