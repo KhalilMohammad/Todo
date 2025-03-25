@@ -19,7 +19,7 @@ namespace TodoBackend.GraphQL
                 Description = input.Description,
                 DueDate = input.DueDate,
                 Priority = input.Priority,
-                IsCompleted = false,
+                IsCompleted = input.IsCompleted,
                 CreatedAt = now,
                 UpdatedAt = now
             };
