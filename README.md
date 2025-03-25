@@ -23,7 +23,7 @@ This project is a real-time synced task manager application, developed as part o
 
    ```bash
    git clone https://github.com/KhalilMohammad/Todo
-   cd todo-assessment
+   cd Todo
    ```
 
 2. **Start all services using Docker Compose**
