@@ -127,7 +127,7 @@ const TodoApp = () => {
   `;
 
   function capitalizeFirstLetter(str) {
-    if (!str) return '';
+    if (!str) return "";
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   }
 
@@ -202,7 +202,10 @@ const TodoApp = () => {
         input: {
           title: todo.title,
           description: todo.description || "",
-          dueDate: todo.dueDate instanceof Date ? todo.dueDate.toISOString() : todo.dueDate,
+          dueDate:
+            todo.dueDate instanceof Date
+              ? todo.dueDate.toISOString()
+              : todo.dueDate,
           priority: todo.priority.toUpperCase(),
         },
       };
@@ -238,9 +241,7 @@ const TodoApp = () => {
 
       const data = await executeGraphQL(UPDATE_TODO_MUTATION, variables);
       setTodos(
-        todos.map((t) =>
-          t.id === data.updateTodo.id ? data.updateTodo : t
-        )
+        todos.map((t) => (t.id === data.updateTodo.id ? data.updateTodo : t))
       );
 
       setIsTodoModalOpen(false);
@@ -684,10 +685,25 @@ const TodoApp = () => {
                     width="100%"
                   >
                     <Flex direction="column" gap="size-150" width="100%">
+                      <Checkbox isSelected={todo.isCompleted} isDisabled>
+                        Completed
+                      </Checkbox>
+                      <Text
+                        UNSAFE_style={{
+                          textDecoration: todo.isCompleted
+                            ? "line-through"
+                            : "none",
+                          fontWeight: "bold",
+                          color: todo.isCompleted
+                            ? "var(--spectrum-global-color-gray-600)"
+                            : "inherit",
+                        }}
+                      >
+                        {todo.title}
+                      </Text>
                       {/* Header with title and priority */}
                       <Flex alignItems="center" gap="size-150" width="100%">
                         {/* Priority indicator - moved to the beginning */}
-                        
 
                         <Text
                           UNSAFE_style={{
@@ -761,7 +777,8 @@ const TodoApp = () => {
                           <Text
                             UNSAFE_style={{
                               fontWeight: "bold",
-                              fontSize: "var(--spectrum-global-dimension-font-size-75)",
+                              fontSize:
+                                "var(--spectrum-global-dimension-font-size-75)",
                             }}
                           >
                             Description:
@@ -783,8 +800,10 @@ const TodoApp = () => {
                         marginTop="size-100"
                         gap="size-300"
                         UNSAFE_style={{
-                          borderTop: "1px solid var(--spectrum-global-color-gray-200)",
-                          paddingTop: "var(--spectrum-global-dimension-size-100)",
+                          borderTop:
+                            "1px solid var(--spectrum-global-color-gray-200)",
+                          paddingTop:
+                            "var(--spectrum-global-dimension-size-100)",
                         }}
                       >
                         <Flex alignItems="center" gap="size-75">
