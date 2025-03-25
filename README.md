@@ -22,8 +22,8 @@ This project is a real-time synced task manager application, developed as part o
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/todo-assessment.git
-   cd todo-assessment
+   git clone https://github.com/KhalilMohammad/Todo
+   cd Todo
    ```
 
 2. **Start all services using Docker Compose**
